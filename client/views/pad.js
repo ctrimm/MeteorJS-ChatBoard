@@ -30,4 +30,11 @@ $(function() {
     var newPadId = Random.id();
     Meteor.Router.to('pad', newPadId);
   });
+
+  $('body').on('click', '#save-image', function() {
+  	var c=document.getElementById("alpha");
+	var d=c.toDataURL("image/png");
+	var w=window.open('about:blank','image from canvas');
+	w.document.write("<h4>Save with Right then Save As </h4> <img src='"+d+"' alt='from canvas'/>");
+  });
 });
